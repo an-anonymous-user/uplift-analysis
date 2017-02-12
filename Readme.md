@@ -13,6 +13,7 @@
 ###Data mining scripts
 - **bug_inducing.py**: identifies fault-inducing patches based on the SZZ algorithm.
 - **complexity_sna** folder: compute source code metrics againt the Understand and igraph tools. The results will then be extracted and pretty outputted by **src_code_metrics.py**.
+- **analyze_bugs.py**: extract some metrics about review and uplift process, developer/reviewer familiarity, etc..
 - **senti_metrics.py**: extract sentiment metrics from the comments in the issue reports.
 - **review_metrics.py**: extract code review-related metrics from comments and patch flags in the issue reports.
 
