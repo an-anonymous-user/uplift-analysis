@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
         # Merge info from commits.
         for commit, commit_info in info['patches'].items():
-            for key in ['developer_experience', 'prior_changes', 'changes_last_3_releases', 'reviewer_experience', 'code_churn', 'reviewer_exp_last_3_releases', 'changes_del', 'test_code_churn', 'modules_num', 'changes_add', 'developer_exp_last_3_releases', 'languages']:
+            for key in ['developer_familiarity_overall', 'code_churn_overall', 'code_churn_last_3_releases', 'reviewer_familiarity_overall', 'changes_size', 'reviewer_familiarity_last_3_releases', 'changes_del', 'test_changes_size', 'modules_num', 'changes_add', 'developer_familiarity_last_3_releases', 'languages']:
                 if key in info:
                     info[key] += commit_info[key]
                 else:
@@ -237,7 +237,7 @@ if __name__ == '__main__':
                     continue
             elif 'uplift_reject_date' in info[channel + '_uplift_info']:
                 uplift_reject_date = datetime.strptime(info[channel + '_uplift_info']['uplift_reject_date'], '%Y-%m-%d')
-                if uplift_reject_date < datetime(2014, 9, 1) or uplift_reject_date >= datetime(2016, 9, 1):
+                if uplift_reject_date < datetime(2014, 9, 1) or uplift_reject_date > datetime(2016, 9, 1):
                     continue
 
             row_per_channel = info_before.copy()
